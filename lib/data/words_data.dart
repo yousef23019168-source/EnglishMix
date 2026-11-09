@@ -3,24 +3,9 @@ import '../models/word.dart';
 
 final List<Word> words = [
   // Greetings and Goodbyes
-  Word(
-    english: 'Hello',
-    arabic: 'مرحبا',
-    category: Category.greetings,
-    subcategory: Subcategory.greetings,
-  ),
-  Word(
-    english: 'Goodbye',
-    arabic: 'مع السلامة',
-    category: Category.greetings,
-    subcategory: Subcategory.goodbyes,
-  ),
-  Word(
-    english: 'Welcome',
-    arabic: 'أهلاً بيك',
-    category: Category.greetings,
-    subcategory: Subcategory.greetings,
-  ),
+  Word(english: 'Hello', arabic: 'مرحبا', category: Category.greetings),
+  Word(english: 'Goodbye', arabic: 'مع السلامة', category: Category.greetings),
+  Word(english: 'Welcome', arabic: 'أهلاً بيك', category: Category.greetings),
   Word(english: 'Thanks', arabic: 'شكراً', category: Category.greetings),
 
   // Food and Drinks
