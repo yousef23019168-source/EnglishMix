@@ -10,6 +10,7 @@ class Word {
   final String arabic;
   final Category category;
   final Subcategory? subcategory;
+  final String? imagePath;
 
   Word({
     String? id,
@@ -17,5 +18,6 @@ class Word {
     required this.arabic,
     required this.category,
     this.subcategory,
+    this.imagePath,
   }) : id = id ?? _uuid.v4();
 }

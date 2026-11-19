@@ -31,7 +31,9 @@ List<CategoryItem> buildCategoryItems<T>({
       CategoryItem(
         label: category.label,
         icon: category.icon,
-        subtitle: '${inCategory.length} $itemsName',
+        subtitle: subs.isEmpty ? '' : '${subs.length} topics',
+        count: inCategory.length,
+        category: category,
         onTap: (context) {
           if (subs.isEmpty) {
             open(context, category.label, inCategory);
@@ -43,19 +45,25 @@ List<CategoryItem> buildCategoryItems<T>({
             MaterialPageRoute(
               builder: (_) => CategoriesScreen(
                 title: category.label,
+                parent: category,
+                totalCount: inCategory.length,
+                itemsName: itemsName,
                 items: [
                   CategoryItem(
                     label: 'All',
                     icon: Icons.apps,
-                    subtitle: '${inCategory.length} $itemsName',
+                    count: inCategory.length,
+                    category: category,
                     onTap: (ctx) => open(ctx, category.label, inCategory),
                   ),
                   for (final sub in subs)
                     CategoryItem(
                       label: sub.label,
                       icon: sub.icon,
-                      subtitle:
-                          '${inCategory.where((i) => subcategoryOf(i) == sub).length} $itemsName',
+                      count: inCategory
+                          .where((i) => subcategoryOf(i) == sub)
+                          .length,
+                      category: category,
                       onTap: (ctx) => open(
                         ctx,
                         sub.label,

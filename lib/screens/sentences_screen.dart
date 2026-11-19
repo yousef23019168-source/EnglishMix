@@ -21,7 +21,7 @@ class _SentencesScreenState extends State<SentencesScreen> {
   @override
   void initState() {
     super.initState();
-    _ttsService.initialize();
+    _ttsService.initialize().catchError((_) {});
   }
 
   @override

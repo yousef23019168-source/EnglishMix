@@ -19,7 +19,7 @@ class _WordsScreenState extends State<WordsScreen> {
   @override
   void initState() {
     super.initState();
-    _ttsService.initialize();
+    _ttsService.initialize().catchError((_) {});
   }
 
   @override
